@@ -18,5 +18,5 @@ from .views import *
 
 urlpatterns = [
     path('', game_data, name='game_data'),
-    path('/sync', sync, name='sync'),
+    path('sync', sync, name='sync'),
 ]

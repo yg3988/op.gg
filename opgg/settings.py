@@ -27,8 +27,8 @@ SECRET_KEY = key_chain['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [key_chain['ALLOWED_HOSTS']]
-
+# ALLOWED_HOSTS = [key_chain['ALLOWED_HOSTS']]
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko'
 
-TIME_ZONE = 'UTC+9'
+# TIME_ZONE = 'UTC+09'
 
 USE_I18N = True
 
