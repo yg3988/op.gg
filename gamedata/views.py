@@ -30,7 +30,7 @@ def sync(request):
 def test(request):
     all = Ladder.objects.all()
 
-    return render(request, 'test.html', {'all_data': all})
+    return render(request, 'gamedata/test.html', {'all_data': all})
 
 def request_ladder_data(request):
     income = json.dumps(request.body)
