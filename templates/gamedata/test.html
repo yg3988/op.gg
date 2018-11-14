@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>테스트용</title>
+</head>
+<body>
+<table>
+    <th></th>
+{% for data in all_data %}
+    <p>
+        data idx: {{ data.index }}
+        game idx: {{ data.game_index.game_name }}
+        score: {{ data.score }}
+        player id: {{ data.player_id }}
+    </p>
+
+{% endfor %}
+
+</table>
+</body>
+</html>

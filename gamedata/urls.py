@@ -16,7 +16,10 @@ Including another URLconf
 from django.urls import path
 from .views import *
 
+# /gatedata/
 urlpatterns = [
-    path('', game_data, name='game_data'),
+    path('register', register_game_data, name='game_data'),
     path('sync', sync, name='sync'),
+    path('request', request_ladder_data, name='request_ladder_data'),
+    path('test', test, name='test'),
 ]
