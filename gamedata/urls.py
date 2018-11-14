@@ -18,8 +18,12 @@ from .views import *
 
 # /gatedata/
 urlpatterns = [
-    path('register', register_game_data, name='game_data'),
+    path('register', register_game_data, name='reg_game_data'),
     path('sync', sync, name='sync'),
     path('request', request_ladder_data, name='request_ladder_data'),
     path('test', test, name='test'),
+
+    # for development
+    path('reg_page_temp', register_page_temp, name='reg_page_temp'),
+    path('register_temp', register_game_data_temp, name='reg_game_data_temp'),
 ]

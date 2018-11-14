@@ -17,6 +17,23 @@ def register_game_data(request):
     # TODO: Users 테이블과 연동
     # new_gamedata.admin_name = Users.objects.find(income['id'])
 
+
+# For development
+def register_page_temp(request):
+    return render(request, 'for_develop/reg_game_temp.html')
+
+
+def register_game_data_temp(request):
+    generator = KeyGenerator()
+
+    new_gamedata = Gamedata()
+    new_gamedata.game_name = request.POST['game_name']
+    new_gamedata.score_type = request.POST['score_type']
+    new_gamedata.api_key = generator.key_gen()
+    new_gamedata.admin_name = 'temp'
+
+    new_gamedata.save()
+
 def sync(request):
     income = json.dumps(request.body)
 
