@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from gamedata.models import *
 import json
 
@@ -34,6 +34,8 @@ def register_game_data_temp(request):
 
     new_gamedata.save()
 
+    return redirect(test)
+
 def sync(request):
     income = json.dumps(request.body)
 
@@ -46,8 +48,9 @@ def sync(request):
 
 def test(request):
     all = Ladder.objects.all()
+    all_game_data = Gamedata.objects.all()
 
-    return render(request, 'gamedata/test.html', {'all_data': all})
+    return render(request, 'gamedata/test.html', {'all_data': all, 'all_game_data': all_game_data})
 
 def request_ladder_data(request):
     income = json.dumps(request.body)

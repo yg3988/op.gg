@@ -5,8 +5,10 @@
     <title>테스트용</title>
 </head>
 <body>
-<table>
-    <th></th>
+
+<a href="{% url 'reg_page_temp' %}">게임 등록 페이지 (임시)</a>
+
+<h2>Ladder table 정보</h2>
 {% for data in all_data %}
     <p>
         data idx: {{ data.index }}
@@ -15,6 +17,16 @@
         player id: {{ data.player_id }}
     </p>
 
+{% endfor %}
+
+<h2>Gamedata table 정보</h2>
+{% for data in all_game_data %}
+<p>
+    game idx: {{ data.index }}
+    game name: {{ data.game_name }}
+    score type: {{ data.api_key }}
+    admin name: {{ data.admin_name }}
+</p>
 {% endfor %}
 
 </table>

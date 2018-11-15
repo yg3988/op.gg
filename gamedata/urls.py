@@ -24,6 +24,6 @@ urlpatterns = [
     path('test', test, name='test'),
 
     # for development
-    path('reg_page_temp', register_page_temp, name='reg_page_temp'),
-    path('register_temp', register_game_data_temp, name='reg_game_data_temp'),
+    path('reg_page_temp', register_page_temp, name='reg_page_temp'),            # 등록 페이지
+    path('register_temp', register_game_data_temp, name='reg_game_data_temp'),  # 실제 등록 수행
 ]
