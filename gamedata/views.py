@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.http import HttpResponse, JsonResponse
 from gamedata.models import *
 import json
 
@@ -6,16 +8,27 @@ from .module.key_generator import KeyGenerator
 
 
 def register_game_data(request):
+
+    # 로그인 여부 확인
+    if not request.user.is_authenticated:
+        return HttpResponse('Not authorized', status=400)
+
     generator = KeyGenerator()
     income = json.dump(request.body)
 
-    # TODO: 예외처리
     new_gamedata = Gamedata()
     new_gamedata.game_name = income['game_name']
     new_gamedata.score_type = income['score_type']
     new_gamedata.api_key = generator.key_gen()
-    # TODO: Users 테이블과 연동
-    # new_gamedata.admin_name = Users.objects.find(income['id'])
+
+    try:
+        user_obj = User.objects.find(income['id'])
+    except User.DoesNotExist:
+        return HttpResponse('Incorrect ID', status=400)
+
+    new_gamedata.admin_name = user_obj
+
+    return HttpResponse('Successfully registered')
 
 
 # For development
@@ -36,21 +49,32 @@ def register_game_data_temp(request):
 
     return redirect(test)
 
+
 def sync(request):
+    # TODO: 예외처리: 올바르지 않은 키값 목록
     income = json.dumps(request.body)
 
     new_ladder_data = Ladder()
     new_ladder_data.game_index = Gamedata.objects.find(income['api_key'])
     new_ladder_data.score = income['score']
-    new_ladder_data.player_id = income['player_id']
+
+    try:
+        user_obj = User.objects.get(username=income['player_id'])
+    except User.DoesNotExist:
+        return JsonResponse({'message': 'Wrong User name'}, status=400)
+    new_ladder_data.player_id = user_obj
 
     new_ladder_data.save()
+
+    return JsonResponse({'message': 'Successfully synced'})
+
 
 def test(request):
     all = Ladder.objects.all()
     all_game_data = Gamedata.objects.all()
 
     return render(request, 'gamedata/test.html', {'all_data': all, 'all_game_data': all_game_data})
+
 
 def request_ladder_data(request):
     income = json.dumps(request.body)
