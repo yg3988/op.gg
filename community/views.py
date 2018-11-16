@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login , logout, authenticate
 from django.contrib.auth.models import User
@@ -36,3 +36,5 @@ class Logout(View):
     def get(self, request):
         if request.user.is_authenticated:
             logout(request)
+
+        return redirect('login')
