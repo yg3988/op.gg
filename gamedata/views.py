@@ -5,6 +5,7 @@ from gamedata.models import *
 import json
 
 from .module.key_generator import KeyGenerator
+from .module.check_sync_data import *
 
 
 def register_game_data(request):
@@ -51,8 +52,11 @@ def register_game_data_temp(request):
 
 
 def sync(request):
-    # TODO: 예외처리: 올바르지 않은 키값 목록
     income = json.dumps(request.body)
+
+    # 예외처리
+    if check_sync_data(income) is False:
+        return JsonResponse({'message': 'Wrong or Missing key'}, status=400)
 
     new_ladder_data = Ladder()
     new_ladder_data.game_index = Gamedata.objects.find(income['api_key'])
