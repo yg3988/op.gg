@@ -83,5 +83,9 @@ def test(request):
 def request_ladder_data(request):
     income = json.dumps(request.body)
 
-    ladder_info_list = Ladder.objects.filter(player_id=income[player_id])
-    # TODO: 결과 Serialize
+    ladder_info_list = Ladder.objects.filter(player_id=income['player_id'])[:10]
+    result = dict()
+    for index, info in enumerate(ladder_info_list):
+        result[index] = {'game_title': info.game_index.game_name, 'score': info.score}
+
+    return JsonResponse(result)
