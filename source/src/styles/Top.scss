@@ -1,9 +1,10 @@
 @import 'utils';
 
-$lime: $oc-lime-0;
+//https://yeun.github.io/open-color/
+$gray: hsl(0, 100%, 100%);
 
 .top {
-  background-color: $lime;
+  background-color: $gray;
   .top-contents{
     height: 5rem;
     width: auto;
@@ -17,7 +18,7 @@ $lime: $oc-lime-0;
     @include media("<wide"){
       width: 100%;
     }
-
+    
     @include media("<medium"){
       padding-left: 1rem;
       padding-right: 1rem;
