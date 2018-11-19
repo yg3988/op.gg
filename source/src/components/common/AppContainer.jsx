@@ -1,10 +1,11 @@
 import React from 'react';
+import AppContents from './AppContents';
 
 const AppContainer = () => {
   return (
-    <p>
-      ㅎㅇ
-    </p>
+    <div>
+      <AppContents/>
+    </div>
   );
 };
 
