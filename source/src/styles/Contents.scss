@@ -1,0 +1,34 @@
+@import 'utils';
+
+$contentsLime: $oc-lime-3;
+
+.profileContainer{
+    height: 15rem;
+    .profileTop{
+        background-color: $contentsLime;
+        height: 80%;
+    }
+    .profileBottom{
+        background-color: hsl(0, 100%, 100%);
+        height: 20%;
+    }
+}
+
+
+.appContents{
+    background-color: $oc-gray-8;
+    display: flex;
+    
+    .appProfile{
+        color: hsl(0, 100%, 100%);
+        border: 1px solid aqua;
+        padding-right: auto;
+        margin-right: auto;
+    }
+    .postList{
+        color: hsl(0, 100%, 100%);
+        border: 1px solid aqua;
+        padding-left: auto;   
+        margin-left: auto;
+    }
+}

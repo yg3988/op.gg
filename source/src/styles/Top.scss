@@ -1,9 +1,10 @@
 @import 'utils';
 
-$lime: $oc-lime-0;
+//https://yeun.github.io/open-color/
+$gray: hsl(0, 100%, 100%);
 
 .top {
-  background-color: $lime;
+  background-color: $gray;
   .top-contents{
     height: 5rem;
     width: auto;
