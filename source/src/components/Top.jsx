@@ -1,8 +1,8 @@
 import React from 'react';
-import classNames from "classnames";
+import styles from 'styles/Top.scss';
 
 //import Stylesheet
-import styles from 'styles/Top.scss';
+import classNames from 'classnames'
 
 const cx = classNames.bind(styles);
 
