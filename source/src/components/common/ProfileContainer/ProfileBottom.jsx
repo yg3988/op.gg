@@ -2,9 +2,7 @@ import React from 'react';
 
 const ProfileBottom = () => {
     return (
-        <div>
-            ㅎㅇ
-        </div>
+        <p>ㅎㅇ</p>
     );
 };
 

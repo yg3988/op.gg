@@ -2,9 +2,7 @@ import React from "react";
 
 const AppProfile = () =>{
     return (
-        <div>
-            gd
-        </div>
+        <p>앱 프로필</p>
     );
 };
 

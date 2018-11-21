@@ -1,11 +1,11 @@
 @import 'utils';
 
-$contentsLime: $oc-lime-3;
+$profile: $oc-teal-4;
 
 .profileContainer{
-    height: 15rem;
+    height: 36vh;
     .profileTop{
-        background-color: $contentsLime;
+        background-color: $profile;
         height: 80%;
     }
     .profileBottom{
@@ -14,25 +14,31 @@ $contentsLime: $oc-lime-3;
     }
 }
 
+.profileImage{
+    width: 25vmin;
+    height: 25vmin;
+    background-color: $oc-teal-5;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: 0vmin;
+}
+
 .AppContainer{
     padding: 0;
     margin: 0;
 }
 
 .appContents{
-    background-color: $oc-gray-8;
+    background-color: $oc-teal-5;
     display: flex;
 
     .appProfile{
         color: hsl(0, 100%, 100%);
         border: 1px solid aqua;
-        padding-right: auto;
-        margin-right: auto;
     }
     .postList{
-        color: hsl(0, 100%, 100%);
+        height: 50vh;
+        color: hsl(0, 0%, 0%);
         border: 1px solid aqua;
-        padding-left: auto;   
-        margin-left: auto;
     }
 }

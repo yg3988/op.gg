@@ -5,7 +5,7 @@ import App from './components/App';
 const Root = () =>{
   return (
     <BrowserRouter>
-      <App/>
+      <App style={{height: 'inherit'}}/>
     </BrowserRouter>
   );
 };

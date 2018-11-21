@@ -13,7 +13,7 @@ const AppContainer = () => {
     return (
         <Grid columns='equal'>
             <Grid.Column className = {cx('Appcontainer')}></Grid.Column>
-            <Grid.Column width={8} className = {cx('AppContainer')}>
+            <Grid.Column width={10} className = {cx('AppContainer')}>
               <AppContents/>
             </Grid.Column>
             <Grid.Column className = {cx('Appcontainer')}></Grid.Column>

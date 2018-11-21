@@ -1,4 +1,5 @@
 body {
+  height: 100vh;
   background-color: hsl(0, 0, 80%);
   margin: 0;
 }
@@ -10,4 +11,20 @@ body {
 a {
   text-decoration: inherit;
   color: inherit;
+}
+
+.pagetemplate{
+  height: 100vh;
+  padding-top: 0px;
+  margin: 0 auto;
+  .top{
+    height: 9%;
+    padding-top: 0px;
+    margin: 0;
+  }
+  .contentstemplate{
+    height: 90%;
+    padding: 0;
+    margin: 0;
+  }
 }
