@@ -5,6 +5,9 @@ import * as serviceWorker from './serviceWorker';
 
 //stylesheet
 import './styles/Base.scss'
+import 'semantic-ui-css/semantic.min.css';
+
+
 ReactDOM.render(<Root />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

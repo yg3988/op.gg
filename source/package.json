@@ -1,7 +1,7 @@
 {
   "name": "source",
   "version": "0.1.0",
-  "private": true,
+  "private": null,
   "dependencies": {
     "classnames": "^2.2.6",
     "eslint": "^5.9.0",
@@ -17,7 +17,9 @@
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
     "redux-action": "^1.2.2",
-    "redux-pender": "^2.0.9"
+    "redux-pender": "^2.0.9",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.83.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +35,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "main": "index.js",
+  "repository": "https://github.com/yg3988/op.gg.git",
+  "author": "Yun-gi Moon",
+  "license": "MIT"
 }

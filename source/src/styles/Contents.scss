@@ -14,11 +14,15 @@ $contentsLime: $oc-lime-3;
     }
 }
 
+.AppContainer{
+    padding: 0;
+    margin: 0;
+}
 
 .appContents{
     background-color: $oc-gray-8;
     display: flex;
-    
+
     .appProfile{
         color: hsl(0, 100%, 100%);
         border: 1px solid aqua;
