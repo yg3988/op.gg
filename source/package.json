@@ -1,25 +1,16 @@
 {
   "name": "source",
   "version": "0.1.0",
-  "private": null,
+  "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
-    "eslint": "^5.9.0",
-    "immutable": "^4.0.0-rc.12",
     "include-media": "^1.4.9",
     "node-sass": "^4.10.0",
     "open-color": "^1.6.3",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1",
-    "reactstrap": "^6.5.0",
-    "redux": "^4.0.1",
-    "redux-action": "^1.2.2",
-    "redux-pender": "^2.0.9",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.83.0"
+    "react-scripts": "2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -35,9 +26,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "main": "index.js",
-  "repository": "https://github.com/yg3988/op.gg.git",
-  "author": "Yun-gi Moon",
-  "license": "MIT"
+  ]
 }
