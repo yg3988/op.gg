@@ -1,0 +1,21 @@
+@import '../../../styles/utils.scss';
+
+.listWrapper{
+  width: 1024px;
+  height: 21rem;
+
+  margin: 1rem auto;
+  padding: 3rem 1rem 3rem 1rem;
+
+  @include media("<wide"){
+    width: 768px;
+  }
+
+  @include media("<large"){
+    width: 512px;
+  }
+
+  @include media("<medium"){
+    width: 100%
+  }
+}

@@ -1,0 +1,34 @@
+@import '../../../styles/utils.scss';
+
+.header{
+  background-color: $oc-gray-0;
+  .headerContent{
+    height: 4rem;
+    margin: 0 auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px groove $oc-gray-3;
+    @include media("<wide"){
+      width: 100%;
+    }
+
+    @include media("<medium"){
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .brand{
+      font-size: 1.5rem;
+      margin: 0 auto;
+      @include stroke(2, white);
+    }
+
+    .right{
+      margin-left: 10vmax;
+    }
+  }
+}

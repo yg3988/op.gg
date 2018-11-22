@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+@import 'utils';
+
+body{
+  background: $oc-gray-3;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR";
+}
+
+*{
+  box-sizing: inherit;
+}
+
+a{
+  text-decoration: inherit;
+  color: inherit;
+}

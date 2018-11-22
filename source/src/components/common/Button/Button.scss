@@ -1,0 +1,52 @@
+@import '../../../styles/utils.scss';
+
+.button{
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+
+  &.default{
+    background: $oc-teal-4;
+    &:hover{
+      background: $oc-teal-5;
+    }
+    &:active{
+      background: $oc-teal-4;
+    }
+  }
+
+  &.outline{
+    border: 2px solid hsl(0, 0%, 0%);
+    border-radius: 2px;
+    &:hover{
+      border: 2px solid hsl(0, 100%, 100%);
+      border-radius: 2px;
+      background: $oc-gray-6;
+      color: white;
+    }
+    &:active{
+      background: $oc-gray-7;
+      color: white;
+    }
+  }
+
+  &:hover{
+    @include material-shadow(2,0.5);
+  }
+
+  &.disabled{
+    background : $oc-gray-4;
+    color: $oc-gray-6;
+    cursor: default;
+    &:hover, &:active{
+      box-shadow: none;
+      background: $oc-gray-4;
+    }
+  }
+
+  & + & {
+    margin-left: 0.5rem;
+  }
+}
