@@ -1,17 +1,14 @@
 // import node_modules
 import React from 'react';
-import { Button, Alert } from 'reactstrap';
+import { Alert } from 'reactstrap';
+import { Button, Divider } from 'semantic-ui-react';
 import classNames from 'classnames';
 
-import SignModalContainer from 'containers/modal/SignModalContainer';
-//  import SignModal from '../SignModal/SignModal';
-// import stylesheet
-import { Divider } from 'semantic-ui-react';
 import styles from './LoginForm.scss';
 
 const cx = classNames.bind(styles);
 
-const LoginForm = () => (
+const LoginForm = ({ onSignup }) => (
   <div>
     <form className={cx('wrapper')}>
       <div>
@@ -52,10 +49,14 @@ const LoginForm = () => (
     <div>
       <Divider horizontal>OR</Divider>
       <div className={cx('signup')}>
-        <Button secondary className={cx('signupButton')}>
+        <Button
+          key="signup"
+          secondary
+          className={cx('signupButton')}
+          onClick={onSignup}
+        >
           Sign Up
         </Button>
-        <SignModalContainer />
       </div>
     </div>
   </div>

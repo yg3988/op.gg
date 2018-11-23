@@ -1,6 +1,5 @@
 //  import node_modules
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { Header, Button } from 'semantic-ui-react';
 
@@ -15,8 +14,10 @@ const cx = classNames.bind(styles);
 const SignModal = ({ visible, onConfirm, onCancel }) => (
   <ModalWrapper visible={visible} className={cx('modalBody')}>
     <Header as="h1" dividing className={cx('title')}>
-      SignUp
-      <Button onClick={onCancel}>Close</Button>
+      <p>Sign Up</p>
+      <Button floated="right" onClick={onCancel}>
+        Close
+      </Button>
     </Header>
     <div className={cx('inputForm')}>
       <div className={cx('inputTilte')}>ID</div>

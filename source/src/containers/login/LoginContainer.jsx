@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import LoginForm from 'components/login/LoginForm/LoginForm';
 import { withRouter } from 'react-router-dom';
-import * as baseAction from 'store/modules/base';
+import * as baseActions from 'store/modules/base';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 class LoginContainer extends Component {
   handleSignup = () => {
-    const { baseAction } = this.props;
-    baseAction.showModal('signup');
+    const { BaseActions } = this.props;
+    BaseActions.showModal('signup');
   };
-
   render() {
     const { handleSignup } = this;
 
@@ -20,8 +19,7 @@ class LoginContainer extends Component {
 
 export default connect(
   state => ({}),
-  dispatch =>
-    ({
-      BaseAction: bindActionCreators(baseAction, dispatch),
-    }(withRouter(LoginContainer))),
-);
+  dispatch => ({
+    BaseActions: bindActionCreators(baseActions, dispatch),
+  }),
+)(withRouter(LoginContainer));

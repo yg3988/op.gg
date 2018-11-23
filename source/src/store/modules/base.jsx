@@ -1,8 +1,6 @@
-import { createAction, handleAction } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 
 import { Map } from 'immutable';
-import { pender } from 'redux-pender';
-import handleActions from 'redux-actions/lib/handleActions';
 
 //  action types
 const SHOW_MODAL = '/SHOW_MODAL';
@@ -15,7 +13,7 @@ export const hideModal = createAction(HIDE_MODAL);
 //  initial state
 const initialState = Map({
   modal: Map({
-    modal: true,
+    signup: false,
     login: false,
   }),
 });
@@ -25,6 +23,7 @@ export default handleActions(
   {
     [SHOW_MODAL]: (state, action) => {
       const { payload: modalName } = action;
+      console.log(state);
       return state.setIn(['modal', modalName], true);
     },
     [HIDE_MODAL]: (state, action) => {
