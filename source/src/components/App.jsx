@@ -5,8 +5,8 @@ import { LoginPage, ListPage, EditorPage } from 'pages';
 const App = () => (
   <div>
     <Switch>
-      <Route exact path="/:kind?" component={LoginPage} />
-      <Route path="/page" component={ListPage} />
+      <Route exact path="/" component={LoginPage} />
+      <Route exact path="/home" component={ListPage} />
       <Route path="/editor" component={EditorPage} />
     </Switch>
   </div>

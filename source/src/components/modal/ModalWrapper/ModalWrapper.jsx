@@ -7,6 +7,50 @@ const cx = classNames.bind(styles);
 
 // eslint-disable-next-line react/prefer-stateless-function
 class ModalWrapper extends Component {
+  state = {
+    animate: false,
+  };
+
+  startAnimation = () => {
+    this.setState({
+      animate: true,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        animate: false,
+      });
+    }, 250);
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.visible !== this.props.visible) {
+      this.startAnimation();
+    }
+  }
+
+  render() {
+    const { children, visible } = this.props;
+    const { animate } = this.state;
+
+    if (!visible && !animate) return null;
+
+    const animation = animate && (visible ? 'enter' : 'leave');
+
+    return (
+      <div>
+        <div className={cx('backgroundAlpha', animation)} />
+        <div className={cx('modalWrapper')}>
+          <div className={cx('modalBox', animation)}>{children}</div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default ModalWrapper;
+
+/*
   render() {
     // eslint-disable-next-line react/prop-types
     const { children, visible } = this.props;
@@ -21,6 +65,4 @@ class ModalWrapper extends Component {
       </div>
     );
   }
-}
-
-export default ModalWrapper;
+*/

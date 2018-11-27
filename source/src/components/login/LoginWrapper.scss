@@ -1,4 +1,4 @@
-.signWrapper {
+.loginWrapper {
   background: white;
   height: 700px;
   width: 500px;
@@ -22,5 +22,56 @@
     padding: 1rem;
     padding-bottom: 0rem;
     //border-bottom: 1px solid #22b8cf;
+  }
+  .signup {
+    width: 100%;
+    margin-top: 2rem;
+    .signupButton {
+      width: inherit;
+    }
+  }
+  .wrapper {
+    background: white;
+    //align-items: center;
+    .Box {
+      border: none;
+      border-bottom: 1px solid #c2c2c2;
+      width: 25rem;
+      margin-left: 7%;
+    }
+
+    .check {
+      margin-left: 7%;
+      margin-bottom: 7%;
+      vertical-align: top;
+      font-size: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 3px;
+      background-color: white;
+      border: 1px solid #dddfe4;
+    }
+
+    .me {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #52595f;
+      margin-left: 0px;
+      margin-top: -8px;
+      line-height: 17px;
+      display: inline-block;
+    }
+
+    .login {
+      // font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 100%;
+      margin-bottom: 5%;
+    }
+
+    .sign {
+      margin-left: 80%;
+      margin-bottom: 10px;
+    }
   }
 }

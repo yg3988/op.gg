@@ -1,8 +1,14 @@
 import React from 'react';
 
-import LoginWrapper from 'components/login/LoginWrapper';
+import LoginContainer from 'containers/login/LoginContainer';
+import SignModalContainer from 'containers/modal/SignModalContainer';
 
 const LoginPage = () => {
-  return <LoginWrapper />;
+  return (
+    <React.Fragment>
+      <LoginContainer />
+      <SignModalContainer />
+    </React.Fragment>
+  );
 };
 export default LoginPage;

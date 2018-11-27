@@ -1,14 +1,14 @@
 // import node_modules
 import React from 'react';
 import { Alert } from 'reactstrap';
-import { Button, Divider } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import classNames from 'classnames';
 
 import styles from './LoginForm.scss';
 
 const cx = classNames.bind(styles);
 
-const LoginForm = ({ onSignup }) => (
+const LoginForm = () => (
   <div>
     <form className={cx('wrapper')}>
       <div>
@@ -46,19 +46,6 @@ const LoginForm = ({ onSignup }) => (
         </div>
       </div>
     </form>
-    <div>
-      <Divider horizontal>OR</Divider>
-      <div className={cx('signup')}>
-        <Button
-          key="signup"
-          secondary
-          className={cx('signupButton')}
-          onClick={onSignup}
-        >
-          Sign Up
-        </Button>
-      </div>
-    </div>
   </div>
 );
 

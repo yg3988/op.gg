@@ -5,7 +5,10 @@ import * as baseActions from 'store/modules/base';
 import SignModal from 'components/login/SignModal/SignModal';
 
 class SignModalContainer extends Component {
-  handleCancel = () => {};
+  handleCancel = () => {
+    const { BaseActions } = this.props;
+    BaseActions.hideModal('signup');
+  };
   handleConfirm = () => {};
 
   render() {

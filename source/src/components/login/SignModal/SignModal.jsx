@@ -1,7 +1,7 @@
 //  import node_modules
 import React from 'react';
 import classNames from 'classnames';
-import { Header, Button } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 
 // import component
 import ModalWrapper from 'components/modal/ModalWrapper/ModalWrapper';
@@ -12,24 +12,34 @@ import styles from './SignModal.scss';
 const cx = classNames.bind(styles);
 
 const SignModal = ({ visible, onConfirm, onCancel }) => (
-  <ModalWrapper visible={visible} className={cx('modalBody')}>
-    <Header as="h1" dividing className={cx('title')}>
-      <p>Sign Up</p>
-      <Button floated="right" onClick={onCancel}>
-        Close
-      </Button>
-    </Header>
-    <div className={cx('inputForm')}>
-      <div className={cx('inputTilte')}>ID</div>
-      <input type="text" name="ID" />
-    </div>
-    <div className={cx('inputForm')}>
-      <div className={cx('inputTitle')}>PassWord</div>
-      <input type="password" name="PASSWORD" />
-    </div>
-    <div>
-      <Button onClick={onConfirm}>Sign Up</Button>
+  <ModalWrapper visible={visible}>
+    <div className={cx('modalBody')}>
+      <div dividing className={cx('title')}>
+        Sign Up
+        <Button floated="right" onClick={onCancel}>
+          Close
+        </Button>
+      </div>
+      <Form className={cx('inputForm')}>
+        <Form.Field>
+          <label>USERNAME</label>
+          <input type="text" name="ID" placeholder="USERNAME" />
+        </Form.Field>
+        <Form.Field>
+          <label>PASSWORD</label>
+          <input type="text" name="ID" placeholder="PASSWORD" />
+        </Form.Field>
+      </Form>
+      <div className={cx('options')}>
+        <Button onClick={onConfirm} type="submit">
+          Sign Up
+        </Button>
+      </div>
     </div>
   </ModalWrapper>
 );
 export default SignModal;
+
+/*
+
+*/
