@@ -8,11 +8,26 @@ import LoginWrapper from 'components/login/LoginWrapper';
 
 //  import redux_modules
 import * as baseActions from 'store/modules/base';
-import * as authActions from 'store/modules/auth';
 
 class LoginContainer extends Component {
-  handleSignin = () => {
-    const { AuthAction } = this.props;
+  handleSignin = () => {};
+
+  handleChange = e => {
+    const { BaseActions } = this.props;
+    const { id, value } = e.target;
+
+    console.log(id);
+    id === 'username'
+      ? BaseActions.changeUsernameInput({
+          id,
+          value,
+          form: 'login',
+        })
+      : BaseActions.changePasswordInput({
+          id,
+          value,
+          form: 'login',
+        });
   };
 
   handleSignup = () => {
@@ -22,12 +37,14 @@ class LoginContainer extends Component {
 
   render() {
     const { username, password } = this.props;
-    const { handleSignup } = this;
+    const { handleSignup, handleChange } = this;
 
     return (
       <LoginWrapper
         username={username}
-        password={password}
+        passowrd={password}
+        onUsernameChange={handleChange}
+        onPasswordChange={handleChange}
         onSignup={handleSignup}
       />
     );
@@ -35,7 +52,9 @@ class LoginContainer extends Component {
 }
 
 export default connect(
-  state => ({}),
+  state => ({
+    form: state.base.getIn(['login', 'form']),
+  }),
   dispatch => ({
     BaseActions: bindActionCreators(baseActions, dispatch),
   }),

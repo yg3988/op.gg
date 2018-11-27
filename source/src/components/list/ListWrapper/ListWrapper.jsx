@@ -7,10 +7,8 @@ import Styles from './ListWrapper.scss';
 
 const cx = classNames.bind(Styles);
 
-const ListWrapper = ({children}) => (
-    <div className={cx('listWrapper')}>
-      {children}
-    </div>
+const ListWrapper = ({ children }) => (
+  <div className={cx('listWrapper')}>{children}</div>
 );
 
 export default ListWrapper;

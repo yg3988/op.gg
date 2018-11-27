@@ -1,13 +1,13 @@
 import React from 'react';
 
 import LoginContainer from 'containers/login/LoginContainer';
-import SignModalContainer from 'containers/modal/SignModalContainer';
+import SignUpModalContainer from 'containers/modal/SignUpModalContainer';
 
 const LoginPage = () => {
   return (
     <React.Fragment>
       <LoginContainer />
-      <SignModalContainer />
+      <SignUpModalContainer />
     </React.Fragment>
   );
 };

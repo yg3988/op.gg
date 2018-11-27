@@ -4,12 +4,20 @@ import classNames from 'classnames';
 import { Alert } from 'reactstrap';
 import { Divider, Button } from 'semantic-ui-react';
 
+//  import components
+import InputForm from './InputForm/InputForm';
 //  import styles
 import styles from './LoginWrapper.scss';
 
 const cx = classNames.bind(styles);
 
-const LoginWrapper = ({ username, password, onSignup }) => {
+const LoginWrapper = ({
+  username,
+  password,
+  onUsernameChange,
+  onPasswordChange,
+  onSignup,
+}) => {
   return (
     <div className={cx('loginWrapper')}>
       <div className={cx('title')}>
@@ -21,33 +29,36 @@ const LoginWrapper = ({ username, password, onSignup }) => {
             <div>
               <p />
               <br />
-              <input
+              <InputForm
                 type="username"
                 id="username"
                 className={cx('Box')}
                 placeholder="USERNAME"
+                onChange={onUsernameChange}
+                value={username}
                 required
               />
               <p />
               <br />
-              <label htmlFor="inputPassword" />
-              <input
+              <InputForm
                 type="password"
                 id="password"
                 className={cx('Box')}
                 placeholder="PASSWORD"
+                onChange={onPasswordChange}
+                value={password}
                 required
               />
               <p />
               <br />
               <div>
-                <input addon type="checkbox" className={cx('check')} />
+                <input addon="true" type="checkbox" className={cx('check')} />
                 <Alert color="light" className="me">
                   Remember Me
                 </Alert>
               </div>
               <div>
-                <Button color="info" size="lg" className={cx('login')}>
+                <Button size="large" className={cx('login')}>
                   Sign In
                 </Button>
               </div>

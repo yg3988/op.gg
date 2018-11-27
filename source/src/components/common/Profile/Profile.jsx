@@ -10,8 +10,8 @@ const cx = classNames.bind(Styles);
 const Profile = () => {
   return (
     <div className={cx('profile')}>
-      <div className={cx('top')}></div>
-      <div className={cx('bottom')}></div>
+      <div className={cx('top')} />
+      <div className={cx('bottom')} />
     </div>
   );
 };

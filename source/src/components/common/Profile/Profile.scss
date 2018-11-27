@@ -1,14 +1,14 @@
 @import '../../../styles/utils.scss';
 
-.profile{ 
-  height: 50vh-(4rem/1rem*1.7vh);
+.profile {
+  height: 50vh - (4rem/1rem * 1.7vh);
   background: $oc-gray-1;
-  .top{
+  .top {
     height: 91%;
     background: $oc-teal-4;
     border-bottom: 1px groove $oc-gray-3;
   }
-  .bottom{
+  .bottom {
     height: 6%;
   }
 }

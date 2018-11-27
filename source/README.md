@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 개요
+
+## 폴더 설명
+
+**components** : 컴포넌트의 형태와 내부 동작, 상태 관리와 연결이 되지 않은 컴포넌트들의 모음
+**containers** : 컴포넌트간 통신 및 상태관리와 연결된 컴포넌트들의 모음
+**lib** : 백엔트 API 함수들의 모음
+**pages**: 라우터에서 사용할 각 페이지 컴포넌트들의 모음
+**store**: 상태 관리에 필요한 redux모듈 및 store생성 함수들의 모음
+
 ## Available Scripts
 
 In the project directory, you can run:
